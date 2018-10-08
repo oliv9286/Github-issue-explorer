@@ -8,8 +8,8 @@ interface Props {
 
 export const Label = (props: Props) => {
   return (
-    <div className={styles.label} key={props.key}>
+    <li className={styles.label} key={props.key}>
       {props.name}
-    </div>
+    </li>
   );
 };

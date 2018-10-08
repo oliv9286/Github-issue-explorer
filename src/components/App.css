@@ -25,3 +25,9 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+.errorMessage {
+  color: $accentPrimaryHover;
+  font-size: $fontSizeSm;
+  margin-top: 10px;
+}

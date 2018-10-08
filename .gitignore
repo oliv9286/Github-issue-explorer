@@ -5,5 +5,6 @@ dist/
 npm-debug.log
 yarn-debug.log
 .awcache
+QnA.md
 yarn-error.log
 sublime.sublime-workspace

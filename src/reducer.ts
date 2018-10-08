@@ -21,6 +21,12 @@ export default function reducer(state: State, action: Action): State {
         filter: action.payload.filter
       };
 
+    case ActionType.SearchErrorChanged:
+      return {
+        ...state,
+        searchError: action.payload.error
+      };
+
     default:
       return state;
   }

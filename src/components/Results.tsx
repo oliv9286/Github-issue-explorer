@@ -14,21 +14,12 @@ interface Props {
   changeFilter: (filter: Filter) => void;
 }
 
-const resultsList = (issues: Issue[], filter: Filter) => {
+const getIssuesList = (issues: Issue[]) => {
   return (
     <div className={styles.cards}>
-      {issues
-        .filter((issue: Issue) => {
-          return (
-            filter === "all" ||
-            (issue.hasOwnProperty("pull_request") &&
-              filter === "pullRequests") ||
-            issue.state === filter
-          );
-        })
-        .map((issue: Issue, i: number) => {
-          return <IssueCard issue={issue} key={i} />;
-        })}
+      {issues.map((issue: Issue, i: number) => {
+        return <IssueCard issue={issue} key={i} />;
+      })}
     </div>
   );
 };
@@ -42,7 +33,25 @@ const filters = [
 
 export class Results extends React.Component<Props, any> {
   public render() {
-    const issues = resultsList(this.props.issues, this.props.filter);
+    const { filter, issues } = this.props;
+
+    const filteredIssues = this.props.issues.filter((issue: Issue) => {
+      return (
+        filter === "all" ||
+        (issue.hasOwnProperty("pull_request") && filter === "pullRequests") ||
+        issue.state === filter
+      );
+    });
+
+    const issuesList =
+      filteredIssues.length > 0 ? (
+        getIssuesList(filteredIssues)
+      ) : (
+        <div className={styles.emptyMsg}>
+          No issues that match given filter.
+        </div>
+      );
+
     return (
       <div className={styles.container}>
         <div className={styles.header}>
@@ -61,9 +70,10 @@ export class Results extends React.Component<Props, any> {
           </div>
 
           <div className={styles.filterList}>
-            {filters.map(f => {
+            {filters.map((f, i: number) => {
               return (
                 <div
+                  key={i}
                   onClick={e => this.props.changeFilter(f.value as Filter)}
                   className={cx({
                     [styles.filter]: true,
@@ -75,8 +85,8 @@ export class Results extends React.Component<Props, any> {
               );
             })}
           </div>
-          {this.props.issues.length > 0 ? (
-            issues
+          {issues.length > 0 ? (
+            issuesList
           ) : (
             <div className={styles.emptyMsg}>
               Hmm... There are no issues in this repo at the moment.

@@ -9,10 +9,9 @@ interface Props {
 }
 
 const trimBodyText = (body: string) => {
-  if (body.split(" ").length > 150) {
-    return body.substr(0, 150) + "...";
+  if (body.length > 200) {
+    return body.substr(0, 200) + "...";
   }
-
   return body;
 };
 
@@ -50,11 +49,11 @@ export const IssueCard = (props: Props) => {
       <div className={styles.iconContainer}>{getIcon(issue)}</div>
       <div className={styles.title}>{issue.title}</div>
       <div className={styles.description}>{trimBodyText(issue.body)}</div>
-      <div className={styles.footer}>
+      <ul className={styles.footer}>
         {issue.labels.map((label: Label, i: number) => {
           return <LabelComponent name={label.name} key={i} />;
         })}
-      </div>
+      </ul>
     </a>
   );
 };

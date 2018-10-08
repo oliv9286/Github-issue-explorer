@@ -19,6 +19,7 @@ export interface State {
   query: string | null;
   issues: Issue[];
   isSearchInProgress: boolean;
+  searchError: string | null;
 }
 
 export type Store = Redux.Store<State>;

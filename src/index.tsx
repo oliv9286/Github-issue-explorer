@@ -11,7 +11,8 @@ const initialState: State = {
   filter: "all",
   query: null,
   issues: [],
-  isSearchInProgress: false
+  isSearchInProgress: false,
+  searchError: null
 };
 
 const middlewares = [thunk];

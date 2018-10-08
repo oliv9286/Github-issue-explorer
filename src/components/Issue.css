@@ -36,6 +36,7 @@
 .iconContainer {
     width: 100%;
     background: $accentSecondary;
+    height: 20px;
 }
 
 .icon {

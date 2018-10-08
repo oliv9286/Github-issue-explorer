@@ -10,12 +10,18 @@ interface Props {
   filter: Filter;
   query: string | null;
   issues: Issue[];
+  searchError: string | null;
   searchIssues: (link: string) => void;
 }
 
 export class App extends React.Component<Props, any> {
   public render() {
-    const { filter, query, issues } = this.props;
+    const { filter, query, issues, searchError } = this.props;
+    const error = searchError ? (
+      <div className={styles.errorMessage}>
+        Oh no, everything is terrible: {searchError}
+      </div>
+    ) : null;
 
     const screen = query ? (
       <Results />
@@ -23,6 +29,7 @@ export class App extends React.Component<Props, any> {
       <div className={styles.searchScreen}>
         <h1>GitHub Issue Viewer</h1>
         <SearchBar updateSearchQuery={this.props.searchIssues} />
+        {error}
       </div>
     );
 
@@ -34,7 +41,8 @@ const mapStateToProps = (state: State) => {
   return {
     query: state.query,
     filter: state.filter,
-    issues: state.issues
+    issues: state.issues,
+    searchError: state.searchError
   };
 };
 
