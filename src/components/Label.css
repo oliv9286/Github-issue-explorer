@@ -1,0 +1,13 @@
+.label {
+    background: $accentPrimary;
+    color: $title;
+    border-radius: 2px;
+    font-size: $fontSizeXs;
+    padding: 5px;
+    max-width: 50px;
+    width: auto;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

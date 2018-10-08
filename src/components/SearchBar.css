@@ -1,0 +1,33 @@
+input {
+    color: $body;
+    padding: 10px;
+    width: 250px;
+    box-sizing: border-box;
+    background-color: $background;
+    border: none;
+    border-radius: 0 2px 2px 0;
+    margin: 10px auto;
+    padding-left: 0px;
+    margin: 0;
+    height: 40px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.searchIcon {
+    fill: $disabled;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    background: $background;
+    padding: 10px;
+    border-radius: 2px 0px 0px 2px;
+}
+
+.searchBarContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}

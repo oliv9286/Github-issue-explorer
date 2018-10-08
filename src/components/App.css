@@ -1,0 +1,27 @@
+.app {
+  font-family: 'Montserrat', sans-serif;
+  font-size: $fontSize;
+  color: $body;
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  font-size: $fontSizeXl;
+  color: $title;
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $body;
+}
+
+.searchScreen {
+  background: $accentPrimary;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

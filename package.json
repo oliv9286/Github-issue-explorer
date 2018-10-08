@@ -1,0 +1,100 @@
+{
+  "name": "test",
+  "version": "0.0.100",
+  "description": "Single Page App for viewing github issues",
+  "main": "index.js",
+  "author": "oliv9286",
+  "engines": {
+    "node": "8.4",
+    "npm": "5.3"
+  },
+  "scripts": {
+    "start": "NODE_ENV=development webpack-dev-server",
+    "package": "NODE_ENV=production webpack",
+    "test": "jest",
+    "prettier": "prettier --list-different --parser typescript src/**/*.{ts,js,tsx} test/**/*.{ts,js,tsx}"
+  },
+  "jest": {
+    "transform": {
+      ".+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/fileMock.js",
+      "\\.css$": "identity-obj-proxy"
+    },
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/enzyme-to-json/serializer"
+    ]
+  },
+  "dependencies": {
+    "@octokit/rest": "^15.13.0",
+    "@types/axios": "^0.14.0",
+    "@types/classnames": "2.2.0",
+    "@types/date-fns": "^2.6.0",
+    "@types/flat": "0.0.28",
+    "@types/inquirer": "0.0.34",
+    "@types/jest": "20.0.8",
+    "@types/jsonwebtoken": "7.2.0",
+    "@types/lodash": "4.14.62",
+    "@types/moxios": "0.4.5",
+    "@types/node": "7.0.13",
+    "@types/qs": "6.2.31",
+    "@types/react": "16.0.5",
+    "@types/react-dom": "15.5.4",
+    "@types/react-modal": "2.2.1",
+    "@types/react-redux": "5.0.5",
+    "@types/react-tooltip": "^3.3.0",
+    "@types/react-transition-group": "^2.0.6",
+    "@types/redux": "3.6.0",
+    "@types/webpack-env": "1.13.0",
+    "autoprefixer": "7.1.1",
+    "aws-sdk": "2.41.0",
+    "axios": "^0.16.1",
+    "classnames": "2.2.5",
+    "css-loader": "0.28.0",
+    "date-fns": "^1.28.5",
+    "enzyme": "2.8.2",
+    "enzyme-to-json": "1.5.1",
+    "flat": "4.0.0",
+    "identity-obj-proxy": "3.0.0",
+    "inquirer": "3.0.6",
+    "jest": "20.0.1",
+    "jsonwebtoken": "7.3.0",
+    "lodash": "4.17.5",
+    "moxios": "0.4.0",
+    "postcss": "6.0.1",
+    "postcss-calc": "^6.0.0",
+    "postcss-loader": "2.0.5",
+    "postcss-nested": "2.0.2",
+    "postcss-simple-vars": "4.0.0",
+    "prettier": "1.7.4",
+    "raven-js": "3.14.2",
+    "react": "15.5.4",
+    "react-dom": "15.5.4",
+    "react-hot-loader": "3.0.0-beta.6",
+    "react-modal": "2.2.4",
+    "react-redux": "5.0.5",
+    "react-test-renderer": "15.5.4",
+    "react-tooltip": "^3.3.0",
+    "react-transition-group": "^2.2.1",
+    "redux": "3.7.2",
+    "redux-thunk": "2.2.0",
+    "style-loader": "0.18.1",
+    "stylelint": "7.10.1",
+    "svg-inline-loader": "0.7.1",
+    "ts-jest": "20.0.4",
+    "ts-loader": "^2.3.3",
+    "ts-node": "^3.3.0",
+    "typescript": "2.6.2",
+    "url-loader": "0.5.8",
+    "webpack": "2.4.1",
+    "webpack-dev-server": "2.4.2"
+  }
+}

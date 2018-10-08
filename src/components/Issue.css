@@ -1,0 +1,46 @@
+.issue {
+    position: relative;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    background: $accentSecondary;
+    color: $title;
+    font-size: $fontSize;
+    height: 80px;
+    padding: 10px;
+}
+
+.description {
+    font-size: $fontSizeSm;
+    height: 100px;
+    padding: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.footer {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    align-items: center;
+    margin: 5px 0 5px 0;
+    height: 30px;
+    padding: 0 10px;
+}
+
+.iconContainer {
+    width: 100%;
+    background: $accentSecondary;
+}
+
+.icon {
+    fill: $accentSecondaryHover;
+    width: 12px;
+    margin-left: auto;
+    padding: 0 10px;
+}
